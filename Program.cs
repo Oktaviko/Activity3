@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -76,6 +77,34 @@ namespace Activity3
                 Console.Write("\nContinue search (y/n): ");
                 ch = char.Parse(Console.ReadLine().ToUpper());
 
+            } while ((ch == 'y'));
+        }
+        public void LinerSearch()
+        {
+            char ch;
+            //serach for the number of comparasion
+            int ctr;
+            do
+            {
+                //accept the number to be reaced 
+                Console.Write("\nEnter the element you want to search : ");
+                int item = Convert.ToInt32((Console.ReadLine()));
+
+                ctr = 0;
+                for (i = 0; i < n; i++)
+                {
+                    ctr++;
+                    if (arr[i] == item)
+                    {
+                        Console.WriteLine("\n" + item.ToString() + "found st position" + (i + 1).ToString());
+                        break;
+                    }
+                }
+                if (i == n)
+                    Console.WriteLine("\n" + item.ToString() + "not found in the array");
+                Console.WriteLine("\nNumber of comparasion : " + ctr);
+                Console.WriteLine("\nContinue search (y/n): ");
+                ch = char.Parse(Console.ReadLine().ToUpper());
             } while ((ch == 'y'));
         }
         static void Main(string[] args)
