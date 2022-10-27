@@ -109,6 +109,51 @@ namespace Activity3
         }
         static void Main(string[] args)
         {
+            Program myList = new Program();
+            int pilihanmenu;
+            char ch;
+            do
+            {
+                do
+                {
+                    Console.WriteLine("Menu Option");
+                    Console.WriteLine("===============");
+                    Console.WriteLine("1. Linear search");
+                    Console.WriteLine("2. Binary search");
+                    Console.WriteLine("3. Exit");
+                    Console.WriteLine("Enter your choice (1,2,3) :");
+                    pilihanmenu = Convert.ToInt32(Console.ReadLine());
+                    switch (pilihanmenu)
+                    {
+                        case 1:
+                            Console.WriteLine("");
+                            Console.WriteLine("................");
+                            Console.WriteLine("Linear search");
+                            Console.WriteLine("................");
+                            myList.input();
+                            myList.LinerSearch();
+                            break;
+                        case 2:
+                            Console.WriteLine("");
+                            Console.WriteLine("................");
+                            Console.WriteLine("Binary Search");
+                            Console.WriteLine("................");
+                            myList.input();
+                            myList.BinarySearch();
+                            break;
+                        case 3:
+                            Console.WriteLine("Exit");
+                            break;
+                    }
+                    Console.WriteLine("\nPilih menu lagi? (y/n): ");
+                    ch = char.Parse(Console.ReadLine().ToLower());
+                    Console.Clear();
+                } while (ch == 'y');
+
+                //to exit from the console
+                Console.WriteLine("\n\nPress return to exit. ");
+                Console.ReadLine();
+            } while (pilihanmenu != 3);
         }
     }
 }
